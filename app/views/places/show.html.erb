@@ -5,14 +5,20 @@
   <p><%= @place.description %></p>
 
 <div>
-  <div class="row">
-  <div class="col-12 col-sm-6">
+  <br /><br />
+
+
+  <div class="container">
+  <div class="center"
+  <div class="col-12 col-md-6">
 <% @place.photos.each do |photo|%>
-   <%= image_tag photo.image %>
-   <% @photo.caption %>
+   <%= image_tag photo.image, :class => "style_image", class: 'img-fluid' %>
+   <%= @photo.caption %>
    <% end %>
 </div>
-</div> 
+</div>
+</div>
+
 
   <style>
     html, body {
@@ -22,7 +28,7 @@
    
   </style>
 
-
+<br /><br />
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
@@ -142,8 +148,8 @@
       <div class="modal-body">
         <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
         <div class="modal-body">
-  <%= f.input :caption %>
   <%= f.input :image, as: :file %>
+  <%= f.input :caption %>
   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
 </div>
 <% end %>
@@ -154,6 +160,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 
