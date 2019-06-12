@@ -13,7 +13,8 @@
   <div class="col-12 col-md-6">
 <% @place.photos.each do |photo|%>
    <%= image_tag photo.image, :class => "style_image", class: 'img-fluid' %>
-   <%= @photo.caption %>
+   <br /><br />
+   <%= photo.caption %>
    <% end %>
 </div>
 </div>
